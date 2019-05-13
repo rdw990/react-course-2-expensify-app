@@ -7,7 +7,6 @@ const EditExpensePage = (props) => {
   //console.log(props)
   return (
     <div>
-      {/*Edititing the expense with id of {props.match.params.id}*/}
       <ExpenseForm 
         expense={props.expense}
         onSubmit = { (expense) => {
