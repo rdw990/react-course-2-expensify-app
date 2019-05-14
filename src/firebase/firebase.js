@@ -16,6 +16,8 @@ import * as firebase from 'firebase'
 
   const database = firebase.database
 
+  /*
+
   database().ref().set('This is my data')
 
   database().ref().set({
@@ -46,4 +48,22 @@ import * as firebase from 'firebase'
     console.log("second set call worked");
   }).catch( (e) => {
     console.log('this failed again', e);
+  })
+
+  */
+
+  // remove one item
+  database().ref('isSingle').remove()
+  .then( () => {
+    console.log('data was removed');
+  }).catch((e) => {
+    console.log('did not remove data', e);
+  })
+
+  // remove everything
+  database().ref().remove()
+  .then( () => {
+    console.log('data was removed');
+  }).catch((e) => {
+    console.log('did not remove data', e);
   })
