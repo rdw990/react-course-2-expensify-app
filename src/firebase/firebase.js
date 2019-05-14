@@ -14,6 +14,22 @@ import * as firebase from 'firebase'
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
 
-  firebase.database().ref().set({
-    name: 'Barney Rubble'
+  const database = firebase.database
+
+  database().ref().set('This is my data')
+
+  database().ref().set({
+    name: 'Barney Rubble',
+    age: 0,
+    email: 'barney@dogs.com',
+    isSingle: true,
+    location: {
+      city: 'Winchester',
+      country: "UK"
+    }
   })
+
+  database().ref('age').set(7)
+  database().ref('location/city').set('East Grinstead')
+  database().ref('attributes/color').set('black & tan')
+  database().ref('attributes/eyes').set('brown')
