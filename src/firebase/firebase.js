@@ -27,9 +27,21 @@ import * as firebase from 'firebase'
       city: 'Winchester',
       country: "UK"
     }
+  }).then( () => {
+    console.log('data is saved!');
+  }).catch((e) => {
+    console.log('this failed', e);
   })
 
   database().ref('age').set(7)
   database().ref('location/city').set('East Grinstead')
-  database().ref('attributes/color').set('black & tan')
-  database().ref('attributes/eyes').set('brown')
+  //database().ref('attributes/color').set('black & tan')
+  //database().ref('attributes/eyes').set('brown')
+  database().ref('attributes').set({
+    eyes: "brown",
+    color: "black & tan"
+  }).then( () => {
+    console.log("second set call worked");
+  }).catch( (e) => {
+    console.log('this failed again', e);
+  })
