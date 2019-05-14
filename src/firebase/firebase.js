@@ -35,6 +35,8 @@ import * as firebase from 'firebase'
 
   database().ref('age').set(7)
   database().ref('location/city').set('East Grinstead')
+
+  // You can add attributes individually or together
   //database().ref('attributes/color').set('black & tan')
   //database().ref('attributes/eyes').set('brown')
   database().ref('attributes').set({
